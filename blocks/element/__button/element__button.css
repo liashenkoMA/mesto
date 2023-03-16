@@ -1,0 +1,11 @@
+.element__button {
+  width: 22px;
+  height: 19px;
+
+  background-image: url(../../../images/vector.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #FFFFFF;
+  
+  border: none;
+}
