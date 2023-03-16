@@ -1,0 +1,11 @@
+.profile__button {
+  width: 150px;
+  height: 50px;
+  box-sizing: border-box;
+  margin-left: auto;
+
+  background-color: black;
+
+  border: 2px solid #FFFFFF;
+  border-radius: 2px;
+}
