@@ -8,6 +8,6 @@
   right: 0;
   left: 0;
   z-index: 2;
-  visibility: visible;
+  display: none;
   background-color: rgba(0, 0, 0, 0.5);
 }
