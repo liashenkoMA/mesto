@@ -2,3 +2,9 @@
   display: flex;
   align-items: center;
 }
+
+@media (max-width: 767px) {
+  .profile__person {
+    align-items: baseline;
+  }
+}

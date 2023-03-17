@@ -1,0 +1,24 @@
+.popup__text {
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 358px;
+  min-height: 27px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+.popup__text:nth-child(odd) {
+  padding-top: 30px;
+}
+
+@media (max-width: 767px) {
+  .popup__text {
+    min-width: 238px;
+  }
+}

@@ -12,3 +12,12 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+@media (max-width: 767px) {
+  .profile__description {
+    padding-top: 14px;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+  }
+}

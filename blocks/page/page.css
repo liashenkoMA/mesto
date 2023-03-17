@@ -3,3 +3,16 @@
 
   max-width: 880px;
 }
+
+@media (max-width: 1023px) {
+  .page {
+    max-width: 581px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page {
+    margin: 28px auto 36px;
+    max-width: 320px;
+  }
+}

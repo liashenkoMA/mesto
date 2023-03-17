@@ -15,3 +15,17 @@
   opacity: 0.6;
   cursor: pointer;
 }
+
+@media (max-width: 1023px) {
+  .profile__button {
+    width: 515px;
+  }
+}
+
+
+
+@media (max-width: 767px) {
+  .profile__button {
+    width: 282px;
+  }
+}
