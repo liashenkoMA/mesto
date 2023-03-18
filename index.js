@@ -17,9 +17,13 @@ function popupClose() {
 };
 
 function saveInfoPopup() {
+  if (popupNameAdd.value.length === 0 && popupDescriptionAdd.value.length === 0) {
+    popupClose()
+  } else {
   profileName.textContent = popupNameAdd.value;
   profileDescription.textContent = popupDescriptionAdd.value;
   popupClose()
+  }
 };
 
 editProfileButton.addEventListener('click', popupOpen);
