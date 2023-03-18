@@ -19,6 +19,8 @@ function popupClose() {
 function saveInfoPopup() {
   if (popupNameAdd.value.length === 0 && popupDescriptionAdd.value.length === 0) {
     popupClose()
+  } else if (popupNameAdd.value === " " && popupDescriptionAdd.value === " ") {
+    popupClose()
   } else {
     profileName.textContent = popupNameAdd.value;
     profileDescription.textContent = popupDescriptionAdd.value;
