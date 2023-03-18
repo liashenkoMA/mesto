@@ -1,4 +1,4 @@
-.popup__text {
+.popup__input {
   margin-left: auto;
   margin-right: auto;
   min-width: 358px;
@@ -13,12 +13,12 @@
   border-bottom: 1px solid #000000;
 }
 
-.popup__text:nth-child(odd) {
+.popup__input:nth-child(odd) {
   margin-top: 30px;
 }
 
 @media (max-width: 767px) {
-  .popup__text {
+  .popup__input {
     min-width: 238px;
   }
 }

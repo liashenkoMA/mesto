@@ -4,8 +4,8 @@ let popupCloseButton = document.querySelector('.popup__button-close')
 
 let profileName = document.querySelector('.profile__title')
 let profileDescription = document.querySelector('.profile__description')
-let popupNameAdd = document.querySelector('.popup__text_type_title')
-let popupDescriptionAdd = document.querySelector('.popup__text_type_description')
+let popupNameAdd = document.querySelector('.popup__input_type_title')
+let popupDescriptionAdd = document.querySelector('.popup__input_type_description')
 let popupSaveButton = document.querySelector('.popup__button_save')
 
 function popupOpen() {
