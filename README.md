@@ -11,4 +11,4 @@
 
 **GitHub Pages**
 
-* [Ссылка на проект в GitHub Pages]()
+* [Ссылка на проект в GitHub Pages](https://liashenkoma.github.io/mesto/)
