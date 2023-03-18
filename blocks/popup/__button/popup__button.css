@@ -23,6 +23,8 @@
 
 @media (max-width: 767px) {
   .popup__button {
+    margin: 45px auto 25px;
+
     min-width: 238px;
     min-height: 46px;
 
