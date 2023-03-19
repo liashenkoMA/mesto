@@ -1,18 +1,16 @@
 .popup__container {
   min-width: 430px;
-  min-height: 330px;
 
   display: flex;
   flex-direction: column;
   position: relative;
 
-  background-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 1);
   border-radius: 10px;
 }
 
 @media (max-width: 767px) {
   .popup__container {
     min-width: 282px;
-    min-height: 322px;
   }
 }

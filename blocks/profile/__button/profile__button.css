@@ -25,5 +25,7 @@
 @media (max-width: 767px) {
   .profile__button {
     min-width: 282px;
+
+    background-size: 16px 16px;
   }
 }

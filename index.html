@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./pages/index.css">
-  <title>mesto</title>
+  <title>Место</title>
 </head>
 
 <body class="root">
@@ -26,22 +26,12 @@
           <div class="profile__info">
             <div class="profile__person">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button class="profile__edit-button"></button>
+              <button type="button" class="profile__edit-button" aria-label="Редактировать профиль"></button>
             </div>
             <p class="profile__description">Исследователь океана</p>
           </div>
         </div>
-        <button class="profile__button profile__button_add"></button>
-      </section>
-
-      <section class="popup" aria-label="Окно редактирования профиля">
-        <div class="popup__container">
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <input type="text" placeholder="Жак-Ив Кусто" class="popup__input popup__input_type_title">
-          <input type="text" placeholder="Исследователь океана" class="popup__input popup__input_type_description">
-          <button class="popup__button popup__button_save">Сохранить</button>
-          <button class="popup__button-close"></button>
-        </div>
+        <button type="button" class="profile__button" aria-label="Добавить изображение"></button>
       </section>
 
       <section class="elements" aria-label="Фотографии пользователя">
@@ -49,42 +39,42 @@
           <img src="./images/karachaevsk.jpg" alt="Фотография монастыря в Карачаевске" class="element__img">
           <div class="element__info">
             <h2 class="element__title">Карачаевск</h2>
-            <button class="element__button"></button>
+            <button type="button" class="element__button" aria-label="Мне нравится"></button>
           </div>
         </div>
         <div class="element">
-          <img src="./images/elbrus.jpg" alt="Фотография монастыря в Карачаевске" class="element__img">
+          <img src="./images/elbrus.jpg" alt="Эльбрус" class="element__img">
           <div class="element__info">
             <h2 class="element__title">Гора Эльбрус</h2>
-            <button class="element__button"></button>
+            <button type="button" class="element__button" aria-label="Мне нравится"></button>
           </div>
         </div>
         <div class="element">
-          <img src="./images/dombai.jpg" alt="Фотография монастыря в Карачаевске" class="element__img">
+          <img src="./images/dombai.jpg" alt="Домбай" class="element__img">
           <div class="element__info">
             <h2 class="element__title">Домбай</h2>
-            <button class="element__button"></button>
+            <button type="button" class="element__button" aria-label="Мне нравится"></button>
           </div>
         </div>
         <div class="element">
-          <img src="./images/elbrus.jpg" alt="Фотография монастыря в Карачаевске" class="element__img">
+          <img src="./images/elbrus.jpg" alt="Эльбрус" class="element__img">
           <div class="element__info">
             <h2 class="element__title">Гора Эльбрус</h2>
-            <button class="element__button"></button>
+            <button type="button" class="element__button" aria-label="Мне нравится"></button>
           </div>
         </div>
         <div class="element">
-          <img src="./images/dombai.jpg" alt="Фотография монастыря в Карачаевске" class="element__img">
+          <img src="./images/dombai.jpg" alt="Домбай" class="element__img">
           <div class="element__info">
             <h2 class="element__title">Домбай</h2>
-            <button class="element__button"></button>
+            <button type="button" class="element__button" aria-label="Мне нравится"></button>
           </div>
         </div>
         <div class="element">
           <img src="./images/karachaevsk.jpg" alt="Фотография монастыря в Карачаевске" class="element__img">
           <div class="element__info">
             <h2 class="element__title">Карачаево-Черкесия</h2>
-            <button class="element__button"></button>
+            <button type="button" class="element__button" aria-label="Мне нравится"></button>
           </div>
         </div>
       </section>
@@ -96,7 +86,21 @@
       <p class="footer__copyright">© 2023 Mesto Russia</p>
     </footer>
 
+    <!-- POPUP -->
+
+    <div class="popup">
+      <div class="popup__container">
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form action="" class="popup__form" name="myForm">
+          <input type="text" placeholder="Введите имя" class="popup__input popup__input_type_title" name="myName" required>
+          <input type="text" placeholder="Расскажите о себе" class="popup__input popup__input_type_description" name="myDescription" required>
+          <button type="submit" class="popup__button" aria-label="Сохранить изменения">Сохранить</button>
+        </form>
+        <button type="button" class="popup__button-close" aria-label="Закрыть окно"></button>
+      </div>
+    </div>
+
   </div>
-  <script src="./index.js"></script>
+  <script src="./scripts/index.js"></script>
 </body>
 </html>

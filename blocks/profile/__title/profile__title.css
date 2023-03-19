@@ -16,8 +16,7 @@
 
 @media (max-width: 767px) {
   .profile__title {
-    padding-top: 26px;
-    padding-right: 10px;
+    padding: 0;
     max-width: 254px;
 
     font-size: 27px;

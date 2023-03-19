@@ -5,6 +5,8 @@
 
 @media (max-width: 767px) {
   .profile__person {
+    padding-top: 26px;
+
     align-items: baseline;
   }
 }

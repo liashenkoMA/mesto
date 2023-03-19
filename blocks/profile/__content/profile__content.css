@@ -12,5 +12,6 @@
 @media (max-width: 767px) {
   .profile__content {
     flex-direction: column;
+    min-width: 282px;
   }
 }
