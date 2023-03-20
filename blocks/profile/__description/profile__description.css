@@ -15,7 +15,7 @@
 
 @media (max-width: 767px) {
   .profile__description {
-    padding-top: 16px;
+    padding-top: 12px;
     
     font-size: 14px;
     line-height: 17px;

@@ -2,7 +2,7 @@
   max-width: 880px;
   min-height: 73px;
 
-  border-bottom: 1px solid rgba(84, 84, 84, 1);
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 }
 
 @media (max-width: 1023px) {
