@@ -107,15 +107,18 @@ editProfileButton.addEventListener('click', function() {
 popupCloseEditProfileButton.addEventListener('click', () => popupOpened(popupEditProfile));
 popupSaveEditProfileForm.addEventListener('submit', saveInfoPopup);
 
+
 elementAddButton.addEventListener('click', () => popupOpened(popupAddElement));
 popupCloseAddElementButton.addEventListener('click', () => popupOpened(popupAddElement));
 popupSaveElementForm.addEventListener('submit', function (evt) {
   evt.preventDefault();
+  
   const name = document.querySelector('.popup__input_type_place-name').value;
   const link = document.querySelector('.popup__input_type_image-link').value;
 
   addElement(name, link)
   popupOpened(popupAddElement)
 });
+
 
 popupImagesCloseButton.addEventListener('click', () => popupOpened(popupOpenImages));
