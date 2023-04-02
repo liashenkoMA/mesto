@@ -47,6 +47,7 @@ const initialCards = [
   }
 ];
 
+/* function */
 
 function openPages (item) {
   for (let i = 0; i < item.length; i++) {
@@ -54,35 +55,17 @@ function openPages (item) {
   }
 }
 
+
 openPages(initialCards);
-
-/* Edit profile */
-
-function popupEditProfileOpen() {
-  popupEditProfile.classList.add('popup_opened');
-  popupNameAdd.setAttribute('value', profileName.textContent);
-  popupDescriptionAdd.setAttribute('value', profileDescription.textContent);
-};
-
-
-function popupEditProfileClose() {
-  popupEditProfile.classList.remove('popup_opened');
-};
 
 
 function saveInfoPopup(evt) {
     evt.preventDefault();
     profileName.textContent = popupNameAdd.value;
     profileDescription.textContent = popupDescriptionAdd.value;
-    popupEditProfileClose();
+    popupOpened(popupEditProfile);
 };
 
-
-editProfileButton.addEventListener('click', popupEditProfileOpen);
-popupCloseEditProfileButton.addEventListener('click', popupEditProfileClose);
-popupSaveEditProfileForm.addEventListener('submit', saveInfoPopup);
-
-/* Element */
 
 function popupOpened(evt) {
   evt.classList.toggle('popup_opened');
@@ -114,6 +97,15 @@ function addElement(name, link) {
   elementContainer.prepend(element);
 }
 
+/* addEventListener */
+
+editProfileButton.addEventListener('click', function() {
+  popupOpened(popupEditProfile);
+  popupNameAdd.setAttribute('value', profileName.textContent);
+  popupDescriptionAdd.setAttribute('value', profileDescription.textContent);
+});
+popupCloseEditProfileButton.addEventListener('click', () => popupOpened(popupEditProfile));
+popupSaveEditProfileForm.addEventListener('submit', saveInfoPopup);
 
 elementAddButton.addEventListener('click', () => popupOpened(popupAddElement));
 popupCloseAddElementButton.addEventListener('click', () => popupOpened(popupAddElement));
@@ -125,4 +117,5 @@ popupSaveElementForm.addEventListener('submit', function (evt) {
   addElement(name, link)
   popupOpened(popupAddElement)
 });
+
 popupImagesCloseButton.addEventListener('click', () => popupOpened(popupOpenImages));
