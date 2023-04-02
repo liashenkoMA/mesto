@@ -1,5 +1,9 @@
 .element__img {
-  min-width: 282px;
-  min-height: 282px;
+  width: 282px;
+  height: 282px;
   object-fit: cover;
+}
+
+.element__img:hover {
+  cursor: pointer;
 }
