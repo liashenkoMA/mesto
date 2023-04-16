@@ -54,7 +54,9 @@ function openPages (item) {
   }
 }
 
+
 openPages(initialCards);
+
 
 /* Edit profile */
 
@@ -74,7 +76,9 @@ function saveInfoPopup(evt) {
     evt.preventDefault();
     profileName.textContent = popupNameAdd.value;
     profileDescription.textContent = popupDescriptionAdd.value;
+
     popupEditProfileClose();
+
 };
 
 
@@ -106,7 +110,9 @@ function addElement(name, link) {
   });
   
   element.querySelector('.element__img').addEventListener('click', function(evt) {
+
     popupOpened(popupOpenImages);
+
     popupImages.setAttribute('src', evt.target.getAttribute('src'));
     popupDescription.textContent = element.innerText;
   });
@@ -124,5 +130,8 @@ popupSaveElementForm.addEventListener('submit', function (evt) {
 
   addElement(name, link)
   popupOpened(popupAddElement)
+
 });
 popupImagesCloseButton.addEventListener('click', () => popupOpened(popupOpenImages));
+
+function closePopup

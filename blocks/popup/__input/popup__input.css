@@ -1,6 +1,4 @@
 .popup__input {
-  margin-left: auto;
-  margin-right: auto;
   min-width: 358px;
   min-height: 24px;
 
@@ -11,10 +9,6 @@
 
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.popup__input:nth-child(even) {
-  margin-top: 30px;
 }
 
 @media (max-width: 767px) {

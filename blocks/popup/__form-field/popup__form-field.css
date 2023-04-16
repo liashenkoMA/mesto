@@ -1,0 +1,10 @@
+.popup__form-field {
+  margin-left: auto;
+  margin-right: auto;
+
+  position: relative;
+}
+
+.popup__form-field:nth-child(even) {
+  margin-top: 30px;
+}
