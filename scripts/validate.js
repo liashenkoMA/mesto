@@ -1,22 +1,33 @@
-function hasValid (inputs) {
+import {config} from './constants.js';
+
+function areAllInputsValid (inputs) {
   return inputs.every((inputs) => {
     return inputs.validity.valid;
   })
 };
 
 
+function enabledButton(button, config) {
+  button.classList.remove(config.inactiveButtonClass);
+  button.removeAttribute('disabled');
+}
+
+export function disabledButton(button, config) {
+  button.classList.add(config.inactiveButtonClass);
+  button.setAttribute('disabled', '');
+}
+
+
 function toggleButton(formElement, inputs, config) {
   const button = formElement.querySelector(config.submitButtonSelector);
 
-  if (!hasValid(inputs)) {
+  if (!areAllInputsValid(inputs)) {
 
-    button.classList.add(config.inactiveButtonClass);
-    button.setAttribute('disabled', '');
-
+    disabledButton(button, config)
+  
   } else {
 
-    button.classList.remove(config.inactiveButtonClass);
-    button.removeAttribute('disabled');
+    enabledButton(button, config)
 
   }
 };
@@ -81,12 +92,4 @@ function enableValidation(config) {
   
 };
 
-
-enableValidation({
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__button',
-  inactiveButtonClass: 'popup__button_type_disabled',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_visible'
-});
+enableValidation(config);
