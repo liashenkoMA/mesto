@@ -28,10 +28,7 @@ const popupImagesCloseButton = popupOpenImages.querySelector('.popup__button-clo
 
 /* Создаем карточки из файла constant */
 initialCards.forEach((item) => {
-  const card = new Card(item.name, item.link, openPopupImg)
-  const cardElement = card.generateCard();
-
-  document.querySelector('.elements').prepend(cardElement);
+  saveNewElement(item.name, item.link, openPopupImg, '#element-template');
 });
 
 /* Вешаем валидацию на все формы */
@@ -41,13 +38,13 @@ forms.forEach((formElement) => {
     evt.preventDefault();
   });
 
-  const test = new FormValidator(config, formElement);
-  test.enableValidation();
+  const validation = new FormValidator(config, formElement);
+  validation.enableValidation();
 
 });
 
 
-  function openPopupImg (evt) {
+function openPopupImg (evt) {
   openPopup(popupOpenImages);
 
   popupImages.setAttribute('src', evt.target.getAttribute('src'));
@@ -100,11 +97,21 @@ function initClosePopupsByOverlay() {
   });
 };
 
+
+function saveNewElement(name, link, openPopupImg, templateElement) {
+
+  const card = new Card(name, link, openPopupImg, templateElement);
+  const cardElement = card.generateCard();
+  document.querySelector('.elements').prepend(cardElement);
+
+};
+
+
 /* Слушатели событий */
 editProfileButton.addEventListener('click', function() {
   openPopup(popupEditProfile);
-  popupNameAdd.setAttribute('value', profileName.textContent);
-  popupDescriptionAdd.setAttribute('value', profileDescription.textContent);
+  popupNameAdd.value = profileName.textContent;
+  popupDescriptionAdd.value = profileDescription.textContent;
 });
 popupCloseEditProfileButton.addEventListener('click', () => closePopup(popupEditProfile));
 popupSaveEditProfileForm.addEventListener('submit', saveInfoPopup);
@@ -119,9 +126,10 @@ popupSaveElementForm.addEventListener('submit', function (evt) {
   const name = popupInputPlaceName.value;
   const link = popupInputUrl.value;
 
-  const card = new Card(name, link, openPopupImg);
-  const cardElement = card.generateCard();
-  document.querySelector('.elements').prepend(cardElement);
+  saveNewElement(name, link, openPopupImg, '#element-template');
+
+  const validation = new FormValidator(config, popupAddElement);
+  validation.enableValidation();
 
   closePopup(popupAddElement);
   evt.target.reset();

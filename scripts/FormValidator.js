@@ -8,6 +8,8 @@ export default class FormValidator {
     this._inputErrorClass = config.inputErrorClass;
     this._errorClass = config.errorClass;
     this._element = formElement;
+    this._button = this._element.querySelector(this._submitButtonSelector);
+    this._inputs = Array.from(this._element.querySelectorAll(this._inputSelector));
   };
 
   enableValidation() {
@@ -19,16 +21,15 @@ export default class FormValidator {
   };
 
   _setEventListener() {
-    const _inputs = Array.from(this._element.querySelectorAll(this._inputSelector));
 
-    this._toggleButton(_inputs);
+    this._toggleButton();
 
-    _inputs.forEach((input) => {
+    this._inputs.forEach((input) => {
       input.addEventListener('input', () => {
 
         this._checkValidity(input);
 
-        this._toggleButton(_inputs);
+        this._toggleButton();
   
       })
     });
@@ -58,33 +59,31 @@ export default class FormValidator {
     _errorElement.textContent = input.validationMessage;
   };
 
-  _toggleButton(_inputs) {
-    const _button = this._element.querySelector(this._submitButtonSelector);
+  _toggleButton() {
+    if (!this._areAllInputsValid()) {
 
-    if (!this._areAllInputsValid(_inputs)) {
-
-      this._disabledButton(_button);
+      this._disabledButton();
     
     } else {
 
-      this._enabledButton(_button);
+      this._enabledButton();
 
     };
   };
 
-  _areAllInputsValid(_inputs) {
-    return _inputs.every((_inputs) => {
-      return _inputs.validity.valid;
+  _areAllInputsValid() {
+    return this._inputs.every((input) => {
+      return input.validity.valid;
     });
   };
 
-  _enabledButton(_button) {
-    _button.classList.remove(this._inactiveButtonClass);
-    _button.removeAttribute('disabled');
+  _enabledButton() {
+    this._button.classList.remove(this._inactiveButtonClass);
+    this._button.removeAttribute('disabled');
   };
 
-  _disabledButton(_button) {
-    _button.classList.add(this._inactiveButtonClass);
-    _button.setAttribute('disabled', '');
+  _disabledButton() {
+    this._button.classList.add(this._inactiveButtonClass);
+    this._button.setAttribute('disabled', '');
   }
 };
