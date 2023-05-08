@@ -26,23 +26,6 @@ const popupImages = popupOpenImages.querySelector('.popup__image');
 const popupDescription = popupOpenImages.querySelector('.popup__description');
 const popupImagesCloseButton = popupOpenImages.querySelector('.popup__button-close');
 
-/* Создаем карточки из файла constant */
-initialCards.forEach((item) => {
-  saveNewElement(item.name, item.link, openPopupImg, '#element-template');
-});
-
-/* Вешаем валидацию на все формы */
-const forms = Array.from(document.querySelectorAll(config.formSelector));
-forms.forEach((formElement) => {
-  formElement.addEventListener('submit', function(evt) {
-    evt.preventDefault();
-  });
-
-  const validation = new FormValidator(config, formElement);
-  validation.enableValidation();
-
-});
-
 
 function openPopupImg (evt) {
   openPopup(popupOpenImages);
@@ -107,6 +90,20 @@ function saveNewElement(name, link, openPopupImg, templateElement) {
 };
 
 
+/* Создаем карточки из файла constant */
+initialCards.forEach((item) => {
+  saveNewElement(item.name, item.link, openPopupImg, '#element-template');
+});
+
+
+/* Валидация форм */
+const validationPopupEditProfile = new FormValidator(config, popupEditProfile);
+validationPopupEditProfile.enableValidation();
+
+const validationPopupAddElement = new FormValidator(config, popupAddElement);
+validationPopupAddElement.enableValidation();
+
+
 /* Слушатели событий */
 editProfileButton.addEventListener('click', function() {
   openPopup(popupEditProfile);
@@ -128,8 +125,7 @@ popupSaveElementForm.addEventListener('submit', function (evt) {
 
   saveNewElement(name, link, openPopupImg, '#element-template');
 
-  const validation = new FormValidator(config, popupAddElement);
-  validation.enableValidation();
+  validationPopupAddElement.disabledButton();
 
   closePopup(popupAddElement);
   evt.target.reset();

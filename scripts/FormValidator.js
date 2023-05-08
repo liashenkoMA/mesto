@@ -62,7 +62,7 @@ export default class FormValidator {
   _toggleButton() {
     if (!this._areAllInputsValid()) {
 
-      this._disabledButton();
+      this.disabledButton();
     
     } else {
 
@@ -82,7 +82,7 @@ export default class FormValidator {
     this._button.removeAttribute('disabled');
   };
 
-  _disabledButton() {
+  disabledButton() {
     this._button.classList.add(this._inactiveButtonClass);
     this._button.setAttribute('disabled', '');
   }
