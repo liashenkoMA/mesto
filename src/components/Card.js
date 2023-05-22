@@ -21,6 +21,7 @@ export default class Card {
 
     this._element.querySelector('.element__title').textContent = this._text;
     this._element.querySelector('.element__img').src = this._img;
+    this._element.querySelector('.element__img').alt = `Фотография: ${this._text}`;
 
     return this._element;
   };

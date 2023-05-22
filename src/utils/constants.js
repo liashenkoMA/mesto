@@ -40,5 +40,3 @@ export const popupEditProfile = document.querySelector('.popup_type_edit-profile
 export const popupNameAdd = popupEditProfile.querySelector('.popup__input_type_title');
 export const popupDescriptionAdd = popupEditProfile.querySelector('.popup__input_type_description');
 export const popupAddElement = document.querySelector('.popup_type_add-element');
-export const popupInputPlaceName = document.querySelector('.popup__input_type_place-name');
-export const popupInputUrl = document.querySelector('.popup__input_type_image-link');

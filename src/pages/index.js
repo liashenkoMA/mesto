@@ -13,44 +13,41 @@ import { initialCards,
         popupNameAdd,
         popupDescriptionAdd,
         popupAddElement,
-        popupInputPlaceName,
-        popupInputUrl,
         } from '../utils/constants.js';
 
 /* Function */
 
+const popupImage = new PopupWithImage('.popup_type_images-open');
+popupImage.setEventListener();
+
 function openPopupImg (evt) {
-  const popupOpened = new PopupWithImage('.popup_type_images-open');
-  popupOpened.open(evt);
-  popupOpened.setEventListener();
+  popupImage.open(evt);
 }
 
-
 function saveElementForm() {
-  const name = popupInputPlaceName.value;
-  const link = popupInputUrl.value;
+  const name = popupElement.getInputValues()[`input-place-name`];
+  const link = popupElement.getInputValues()[`input-image-link`];
 
-  const card = new Card(name, link, openPopupImg, '#element-template');
-  const cardElement = card.generateCard();
-    
-  cardsList.addItem(cardElement);
+  cardsList.addItem(createCard(name, link, openPopupImg));
   validationPopupAddElement.disabledButton();
   popupElement.close();
 }
 
-
 function saveInfoPopup() {
-  userInfo.setUserInfo();
+  userInfo.setUserInfo(popupProfil.getInputValues());
   popupProfil.close();
 }
+
+function createCard(name, link, openPopupImg) {
+  const card = new Card(name, link, openPopupImg, '#element-template');
+  const cardElement = card.generateCard();
+  return cardElement;
+};
 
 /* Section */
 
   const cardsList = new Section({items: initialCards, renderer: (item) => {
-    const card = new Card(item.name, item.link, openPopupImg, '#element-template');
-    const cardElement = card.generateCard();
-    
-    cardsList.addItem(cardElement);
+    cardsList.addItem(createCard(item.name, item.link, openPopupImg));
   }}, '.elements');
 
   cardsList.renderItems();
@@ -67,7 +64,6 @@ validationPopupAddElement.enableValidation();
 
 const popupProfil = new PopupWithForm('.popup_type_edit-profile', saveInfoPopup);
 popupProfil.setEventListener();
-
 
 const popupElement = new PopupWithForm('.popup_type_add-element', saveElementForm);
 popupElement.setEventListener();

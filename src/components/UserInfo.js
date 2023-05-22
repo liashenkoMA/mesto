@@ -2,10 +2,6 @@ export default class UserInfo {
   constructor(profileName, profileDescription) {
     this._profileName = document.querySelector(profileName);
     this._profileDescription = document.querySelector(profileDescription);
-
-    this._popupEditProfile = document.querySelector('.popup_type_edit-profile');
-    this._popupNameAdd = this._popupEditProfile.querySelector('.popup__input_type_title');
-    this._popupDescriptionAdd = this._popupEditProfile.querySelector('.popup__input_type_description');
   };
 
   getUserInfo() {
@@ -15,8 +11,8 @@ export default class UserInfo {
     };
   };
 
-  setUserInfo() {
-    this._profileName.textContent = this._popupNameAdd.value;
-    this._profileDescription.textContent = this._popupDescriptionAdd.value;
+  setUserInfo(inputContent) {
+    this._profileName.textContent = inputContent[`input-title`];
+    this._profileDescription.textContent = inputContent[`input-description`];
   };
 }
