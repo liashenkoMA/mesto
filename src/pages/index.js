@@ -24,17 +24,17 @@ function openPopupImg (evt) {
   popupImage.open(evt);
 }
 
-function saveElementForm() {
-  const name = popupElement.getInputValues()[`input-place-name`];
-  const link = popupElement.getInputValues()[`input-image-link`];
+function saveElementForm(items) {
+  const name = items[`input-place-name`];
+  const link = items[`input-image-link`];
 
   cardsList.addItem(createCard(name, link, openPopupImg));
   validationPopupAddElement.disabledButton();
   popupElement.close();
 }
 
-function saveInfoPopup() {
-  userInfo.setUserInfo(popupProfil.getInputValues());
+function saveInfoPopup(items) {
+  userInfo.setUserInfo(items);
   popupProfil.close();
 }
 

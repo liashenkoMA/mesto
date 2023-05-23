@@ -9,7 +9,7 @@ export default class PopupWithForm extends Popup {
     this._submitsForm = submitsForm;
   };
 
-  getInputValues() {
+  _getInputValues() {
     const inputs = Array.from(this._popup.querySelectorAll('.popup__input'));
 
     return inputs.reduce((total, item) => {
@@ -25,7 +25,7 @@ export default class PopupWithForm extends Popup {
     this._popupForm.addEventListener('submit', (evt) => {
       evt.preventDefault();
 
-      this._submitsForm();
+      this._submitsForm(this._getInputValues());
     })
   };
 
