@@ -11,10 +11,12 @@ export default class PopupWithImage extends Popup {
 
   open(evt) {
     super.open();
+    
+    const text = evt.target.nextElementSibling.querySelector('.element__title').textContent;
 
     this._popupImages.setAttribute('src', evt.target.getAttribute('src'));
-    this._popupImages.setAttribute('alt', `Фотография: ${evt.target.nextElementSibling.innerText}`);
-    this._popupDescription.textContent = evt.target.nextElementSibling.innerText;
+    this._popupImages.setAttribute('alt', `Фотография: ${text}`);
+    this._popupDescription.textContent = text;
   };
 
 }

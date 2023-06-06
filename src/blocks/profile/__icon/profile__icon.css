@@ -1,0 +1,10 @@
+.profile__icon {
+  position: relative;
+
+  border-radius: 50%;
+}
+
+.profile__icon:hover .profile__edit-avatar-button {   
+  opacity: 1;
+  cursor: pointer;
+}

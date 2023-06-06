@@ -1,29 +1,7 @@
-export const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
+export const options = {
+  cohort: 'cohort-68',
+  key: 'f1605107-de74-4364-b9cb-272c1e5a2dd9',
+}
 
 export const config = {
   formSelector: '.popup__form',
@@ -36,7 +14,10 @@ export const config = {
 
 export const editProfileButton = document.querySelector('.profile__edit-button');
 export const elementAddButton = document.querySelector('.profile__button');
+export const avatarProfileButton = document.querySelector('.profile__edit-avatar-button');
 export const popupEditProfile = document.querySelector('.popup_type_edit-profile');
+export const popupEditAvatar = document.querySelector('.popup_type_edit-avatar');
 export const popupNameAdd = popupEditProfile.querySelector('.popup__input_type_title');
 export const popupDescriptionAdd = popupEditProfile.querySelector('.popup__input_type_description');
 export const popupAddElement = document.querySelector('.popup_type_add-element');
+export const profileAvatar = document.querySelector('.profile__avatar');
