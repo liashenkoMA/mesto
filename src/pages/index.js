@@ -36,13 +36,12 @@ function openPopupImg (evt) {
 function saveElementForm(items) {
   const name = items[`input-place-name`];
   const link = items[`input-image-link`];
-  const likes = 0;
-  const cardId = null;
   const myProfileId = "a6d1a089272270f220b3fd75";
     
   api.postNewCard(name, link)
-  .then(() => {
-    cardList.addItem(createCard(name, link, likes, myProfileId, cardId, myProfileId, openPopupImg, createNewPopupConfirm, putLike, deleteLike));
+  .then((res) => {
+    console.log(res)
+    cardList.addItem(createCard(res.name, res.link, res.likes, res.owner._id, res._id, res.owner._id, openPopupImg, createNewPopupConfirm, putLike, deleteLike));
     validationPopupAddElement.disabledButton();
     popupElement.close();
   })
