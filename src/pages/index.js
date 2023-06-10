@@ -40,7 +40,6 @@ function saveElementForm(items) {
     
   api.postNewCard(name, link)
   .then((res) => {
-    console.log(res)
     cardList.addItem(createCard(res.name, res.link, res.likes, res.owner._id, res._id, res.owner._id, openPopupImg, createNewPopupConfirm, putLike, deleteLike));
     validationPopupAddElement.disabledButton();
     popupElement.close();
