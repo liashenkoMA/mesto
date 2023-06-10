@@ -1,5 +1,5 @@
 export default class UserInfo {
-  constructor(profileName, profileDescription) {
+  constructor(profileName, profileDescription, saveAvatar) {
     this._profileName = document.querySelector(profileName);
     this._profileDescription = document.querySelector(profileDescription);
   };
