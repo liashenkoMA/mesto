@@ -36,7 +36,6 @@ function openPopupImg (evt) {
 function saveElementForm(items) {
   const name = items[`input-place-name`];
   const link = items[`input-image-link`];
-  const myProfileId = "a6d1a089272270f220b3fd75";
     
   api.postNewCard(name, link)
   .then((res) => {
