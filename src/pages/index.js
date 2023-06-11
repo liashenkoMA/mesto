@@ -33,7 +33,7 @@ function openPopupImg (evt) {
   popupImage.open(evt);
 };
 
-function saveElementForm(items) {
+function saveElementForm(button, items) {
   const name = items[`input-place-name`];
   const link = items[`input-image-link`];
     
@@ -47,11 +47,11 @@ function saveElementForm(items) {
     console.log(err);
   })
   .finally(() => {
-    loading(false);
+    loading(button, false);
   });
 };
 
-function saveInfoPopup(items) {
+function saveInfoPopup(button, items) {
   api.patchUserInfo(items[`name`], items[`about`]).then(() => {
     userInfo.setUserInfo(items);
     popupProfil.close();
@@ -60,7 +60,7 @@ function saveInfoPopup(items) {
     console.log(err);
   })
   .finally(() => {
-    loading(false);
+    loading(button, false);
   });
 };
 
@@ -89,9 +89,6 @@ function deleteCard(element, id) {
   .catch((err) => {
     console.log(err);
   })
-  .finally(() => {
-    loading(false);
-  });
 };
 
 function putLike(element, id) {
@@ -120,7 +117,7 @@ function deleteLike(element, id) {
   });
 };
 
-function changeAvatar(links) {
+function changeAvatar(button, links) {
   api.patchAvatar(links[`input-avatar-link`])
   .then(() => {
     profileAvatar.src = links[`input-avatar-link`];
@@ -130,15 +127,15 @@ function changeAvatar(links) {
     console.log(err);
   })
   .finally(() => {
-    loading(false);
+    loading(button, false);
   });
 };
 
-function loading(isLoading) {
+function loading(button, isLoading) {
   if (isLoading) {
-    document.querySelector('.popup__button').textContent = 'Сохранение...';
+    button.textContent = 'Сохранение...';
   } else {
-    document.querySelector('.popup__button').textContent = 'Сохранить';
+    button.textContent = 'Сохранить';
   };
 };
 
